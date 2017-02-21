@@ -32,7 +32,6 @@ var LinkSchema = new mongoose.Schema ({
 var Link = mongoose.model("Link", LinkSchema);
 
 
-
 // routes
 app.get("/", function(req, res){
   Unit.find({}, function(err, units){
@@ -51,9 +50,6 @@ app.get("/", function(req, res){
 });
 
 //units
-app.get("/new", function(req, res){
-  res.render("units/new");
-});
 
 app.post("/new", function(req, res){
   Unit.create(req.body.unit, function(err, createdUnit){

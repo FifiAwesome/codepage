@@ -1,8 +1,16 @@
-<% include partials/header %>
-    <a href="/new">Add unit</a>
-    <!-- <a href="/links/new">Add link</a> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.8/semantic.min.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+</head>
+<body>
     <i class="plus icon"></i>
-      <!-- <form class="ui form small" action="/new" method="post">
+      <form class="ui form small" action="/new" method="post">
         <div class="field">
           <div class="ui label">Add new unit</div>
         </div>
@@ -13,7 +21,7 @@
         <div class="field">
             <button class="ui button mini olive right floated">Add</button>
         </div>
-      </form> -->
+      </form>
 
     <div class="ui container">
       <div class="ui piled segment">
@@ -33,13 +41,13 @@
       </div>
         <div class="ui segment base" id="python-list">
           <div class="ui link list">
-            <% links.forEach(function(link){ %>
-              <a href="<%=links.url%>" class="item"><i class="angle right icon"></i><%=links.name%></a>
-            <% }) %>
+              <!-- <a href="<%=links.url%>" class="item"><i class="angle right icon"></i></a> -->
               <form><input type="text" class="insider" placeholder="+" class="item"></form>
           </div>
         </div>
 
     </div>
 
-<% include partials/footer %>
+    <script type="text/javascript" src="scripts/main.js"></script>
+  </body>
+  </html>
