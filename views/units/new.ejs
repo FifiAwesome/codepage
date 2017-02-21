@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+
+<form class="ui form small" action="/new" method="post">
+  <div class="field">
+    <div class="ui label">Add new unit</div>
+  </div>
+  <div class="field">
+      <input name="unit[name]" type="text" placeholder="name of new unit">
+      <input name="unit[url]" type="text" placeholder="icon url">
+  </div>
+  <div class="field">
+      <button class="ui button mini olive right floated">Add</button>
+  </div>
+</form>
+
+<% include ../partials/footer %>

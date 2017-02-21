@@ -43,7 +43,7 @@ h4 {
 }
 
 .ui.segment.base {
-  display: none;
+  /*display: none;*/
   width: 65%;
   margin: 60px auto;
   font-family: RobotoCondensed-Light;
@@ -53,7 +53,7 @@ h4 {
 }
 
 .ui.form {
-  display: none;
+  /*display: none;*/
   position: absolute;
   float: right;
   top: 50px;
