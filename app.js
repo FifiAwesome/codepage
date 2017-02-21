@@ -10,7 +10,7 @@ app.use(express.static(__dirname + "/public"));
 
 mongoose.connect("mongodb://localhost:27017/codepage");
 
-app.get("/", funtion(req, res){
+app.get("/", function(req, res){
   res.render("index");
 });
 

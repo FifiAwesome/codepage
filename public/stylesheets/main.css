@@ -1,0 +1,72 @@
+body {
+  background: #E7E7E7;
+}
+div.ui.container {
+  width: 800px;
+}
+
+i.plus {
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+.ui.piled.segment:first-child {
+  margin: 30vh auto;
+  margin-bottom: 30px;
+  width: 55%;
+}
+
+h1 {
+  font-family: Shojumaru-Regular;
+  font-size: 36px;
+  color: #000000;
+  text-align: center;
+}
+
+.column {
+  text-align: center;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  /*border: 1px solid #979797;*/
+}
+
+h4 {
+  margin-top: 3px;
+  font-family: Philosopher-Regular;
+  font-size: 22px;
+  color: #000000;
+}
+
+.ui.segment.base {
+  display: none;
+  width: 65%;
+  margin: 60px auto;
+  font-family: RobotoCondensed-Light;
+  font-size: 18px;
+  color: #000000;
+  padding-bottom: 40px;
+}
+
+.ui.form {
+  display: none;
+  position: absolute;
+  float: right;
+  top: 50px;
+  right: 10px;
+  background: transparent;
+  width: 200px;
+  font-family: RobotoCondensed-Light;
+}
+
+input.insider {
+  border: 0;
+  outline: none;
+  width: 20%;
+  position: absolute;
+  bottom: 10px;
+}
