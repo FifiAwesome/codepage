@@ -1,0 +1,29 @@
+{
+  "name": "codepage",
+  "version": "1.0.0",
+  "description": "tutorial site",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "devstart": "nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FifiAwesome/codepage.git"
+  },
+  "author": "Filip Urbański",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FifiAwesome/codepage/issues"
+  },
+  "homepage": "https://github.com/FifiAwesome/codepage#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
