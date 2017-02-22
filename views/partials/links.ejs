@@ -1,0 +1,20 @@
+<p><%=unit.name%></p>
+<p><%=unit.url%></p>
+<p> ADD A LINK: </p>
+<form action="/units/<%=unit.id%>/new" method="post">
+  <input class="form-control" type="text" name="link[name]" placeholder="text">
+  <input class="form-control" type="text" name="link[url]" placeholder="text">
+  <button>Submit</button>
+</form>
+
+<div>
+  <%unit.links.forEach(function(link){%>
+    <p><%=link.name%></p>
+    <p><%=link.url%></p>
+  <%})%>
+</div>
+
+<!-- <div class="ui link list">
+    <a href="#" class="item"><i class="angle right icon"></i></a>
+    <form><input type="text" class="insider" placeholder="+" class="item"></form>
+</div> -->
