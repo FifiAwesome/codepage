@@ -38,19 +38,12 @@ app.get("/", function(req, res){
     if(err){
       console.log(err);
     } else {
-      Link.find({}, function(err, links){
-        if(err){
-          console.log("Error --> ");
-        } else {
-          res.render("index", {units: units, links:links});
-        }
-      })
-    }
-  })
-});
+        res.render("index", {units: units});
+    }})
+})
 
 //units
-
+//add
 app.post("/new", function(req, res){
   Unit.create(req.body.unit, function(err, createdUnit){
     if(err){
@@ -61,7 +54,7 @@ app.post("/new", function(req, res){
     };
   });
 });
-
+//show units
 app.get("/units", function(req, res){
   Unit.find({}, function(err, units){
     if(err){
@@ -71,6 +64,33 @@ app.get("/units", function(req, res){
     };
   })
 })
+
+//show specific unit
+
+app.get("/units/:id", function(req, res){
+  Unit.findById(req.params.id).populate("links").exec(function(err, foundUnit){
+    if(err){
+      console.log(err)
+    } else {
+      res.render("partials/links", {unit: foundUnit});
+    };
+  });
+});
+
+//links add
+app.post("/units/:id/new", function(req, res){
+  Unit.findById(req.params.id, function(err, found){
+    if(err){
+      console.log(err);
+    } else {
+      Link.create(req.body.link, function(err, created){
+        found.links.push(created);
+        found.save();
+        res.redirect("/units/" + req.params.idm);
+      })
+    }
+  })
+});
 
 app.listen(process.env.PORT, function(){
   console.log("CodePage server started.")

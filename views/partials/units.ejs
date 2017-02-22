@@ -1,8 +1,10 @@
 <% units.forEach(function(unit){ %>
   <div class="four wide column">
     <div class="unit-icon">
+      <a href="/units/<%= unit.id %>">
       <img src="<%= unit.url %>">
       <h4><%=unit.name%></h4>
+      </a>
     </div>
   </div>
 <% }); %>
