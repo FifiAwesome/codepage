@@ -10,7 +10,7 @@
 </head>
 <body>
     <i class="plus icon"></i>
-      <form class="ui form small" action="/new" method="post">
+      <form id="unitForm" class="ui form small" action="/new" method="post">
         <div class="field">
           <div class="ui label">Add new unit</div>
         </div>
@@ -22,30 +22,34 @@
             <button class="ui button mini olive right floated">Add</button>
         </div>
       </form>
+<!-- ======================================== -->
 
+<script type="text/javascript">
+
+
+</script>
+<!-- ======================================== -->
     <div class="ui container">
       <div class="ui piled segment">
         <h1>#CodePage</h1>
       </div>
-      <div class="ui grid">
-
-        <% units.forEach(function(unit){ %>
+      <div class="ui grid" id="unit-list">
+        <!-- <% units.forEach(function(unit){ %>
           <div class="four wide column">
             <div class="unit-icon">
               <img src="<%= unit.url %>">
               <h4><%=unit.name%></h4>
             </div>
           </div>
-        <% }); %>
-
+        <% }); %> -->
       </div>
-        <div class="ui segment base" id="python-list">
-          <div class="ui link list">
-              <!-- <a href="<%=links.url%>" class="item"><i class="angle right icon"></i></a> -->
-              <form><input type="text" class="insider" placeholder="+" class="item"></form>
-          </div>
-        </div>
 
+      <div class="ui segment base" id="python-list">
+        <div class="ui link list">
+            <!-- <a href="<%=links.url%>" class="item"><i class="angle right icon"></i></a> -->
+            <form><input type="text" class="insider" placeholder="+" class="item"></form>
+        </div>
+      </div>
     </div>
 
     <script type="text/javascript" src="scripts/main.js"></script>

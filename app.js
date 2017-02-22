@@ -62,6 +62,16 @@ app.post("/new", function(req, res){
   })
 });
 
+app.get("/units", function(req, res){
+  Unit.find({}, function(err, units){
+    if(err){
+      console.log("Something went wrong..." + err)
+    } else {
+      res.render("partials/units", {units:units})
+    };
+  })
+})
+
 app.listen(process.env.PORT, function(){
   console.log("CodePage server started.")
 })
