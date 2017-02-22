@@ -14,6 +14,7 @@ $("document").ready(function() {
    loadUnits();
 });
 
+
 // shows form on top right
 $(".plus.icon:first").on("click", function(){
   $(".ui.form:first").fadeToggle();

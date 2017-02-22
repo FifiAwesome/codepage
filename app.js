@@ -86,7 +86,7 @@ app.post("/units/:id/new", function(req, res){
       Link.create(req.body.link, function(err, created){
         found.links.push(created);
         found.save();
-        res.redirect("/units/" + req.params.idm);
+        res.redirect("/units/" + req.params.id);
       })
     }
   })

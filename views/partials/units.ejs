@@ -1,10 +1,18 @@
 <% units.forEach(function(unit){ %>
   <div class="four wide column">
-    <div class="unit-icon">
-      <a href="/units/<%= unit.id %>">
+      <div class="unit-icon">
+      <a href="/units/<%=unit._id%>">
       <img src="<%= unit.url %>">
-      <h4><%=unit.name%></h4>
-      </a>
+      <h4><%=unit.name%></h4></a>
     </div>
   </div>
+
 <% }); %>
+<script>
+
+$("a").on("click", function(ev){
+  ev.preventDefault();
+  var attr = $(this).attr("href")
+  $("#link-list").load(attr);
+})
+</script>
