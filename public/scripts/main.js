@@ -1,6 +1,15 @@
 // loads unit-list div
-$(document).ready(function(){
-    $('#unit-list').load('/units');
+function loadUnits(){
+  $('#unit-list').load('/units', function(){
+    // link-list needs to load after units have been loaded!
+    $("div.unit-icon").on("click", function(){
+      $("#link-list").fadeToggle();
+    })
+  });
+};
+
+$("document").ready(function() {
+   loadUnits();
 });
 
 // shows form on top right
@@ -16,11 +25,12 @@ frm.submit(function (ev) {
         url: frm.attr('action'),
         data: frm.serialize(),
         success: function (data) {
+            // loadUnits();
             console.log('ok');
             $(".ui.form:first").fadeToggle(function(){
               $("form.small input").val("");
             });
-            $('#unit-list').load('/units');
+            loadUnits()
         }
     });
     ev.preventDefault();

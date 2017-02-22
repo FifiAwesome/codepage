@@ -57,9 +57,9 @@ app.post("/new", function(req, res){
       console.log(err);
     } else {
       console.log(createdUnit);
-      return res.redirect("/");
-    }
-  })
+      res.redirect("/");
+    };
+  });
 });
 
 app.get("/units", function(req, res){
