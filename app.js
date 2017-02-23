@@ -84,9 +84,14 @@ app.post("/units/:id/new", function(req, res){
       console.log(err);
     } else {
       Link.create(req.body.link, function(err, created){
+        if(err){
+          console.log(err)
+        } else {
         found.links.push(created);
         found.save();
-        res.redirect("/units/" + req.params.id);
+        console.log(created);
+        res.redirect("/");
+        }
       })
     }
   })

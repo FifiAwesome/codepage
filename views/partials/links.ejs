@@ -3,9 +3,27 @@
     <a href="<%=link.url%>" class="item"><i class="angle right icon"></i><%=link.name%></a>
 <%})%>
 <p></p>
-<form action="/units/<%=unit.id%>/new" method="post">
+<form id="linksForm" action="/units/<%=unit.id%>/new" method="post">
   <input type="text" name="link[name]" placeholder="+ title" class="title item">
   <input type="text" name="link[url]" placeholder="url" class="url item">
+  <button id="linkSubmit"></button>
 </form>
 
 </div>
+
+<script>
+var fm = $("#linksForm");
+fm.submit(function (e) {
+    $.ajax({
+        type: fm.attr('method'),
+        url: fm.attr('action'),
+        data: fm.serialize(),
+        success: function (data) {
+            console.log('ok');
+            $("#link-list").load("/units/<%=unit._id%>");
+        }
+    });
+    e.preventDefault();
+});
+
+</script>
