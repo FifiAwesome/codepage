@@ -10,7 +10,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 
-mongoose.connect("mongodb://localhost:27017/codepage");
+mongoose.connect(process.env.DATABASE);
 
 // models
 var UnitSchema = new mongoose.Schema ({
