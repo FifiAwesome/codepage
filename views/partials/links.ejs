@@ -1,9 +1,14 @@
 <div class="ui link list">
 <%unit.links.forEach(function(link){%>
-    <a href="<%=link.url%>" class="item"><i class="angle right icon"></i><%=link.name%></a>
+  <div class="item">
+    <a href="<%=link.url%>"><i class="angle right icon"></i><%=link.name%></a>
+    <form class="linkdel" method="POST" action="/units/<%=unit._id%>/links/<%=link._id%>?_method=delete">
+      <button class="ui icon button mini"><i class="trash icon"></i> delete?</button>
+    </form>
+  </div>
 <%})%>
 <p></p>
-<form id="linksForm" action="/units/<%=unit.id%>/new" method="post">
+<form id="linksForm" action="/units/<%=unit.id%>/links/new" method="post">
   <input type="text" name="link[name]" placeholder="+ title" class="title item">
   <input type="text" name="link[url]" placeholder="url" class="url item">
   <button id="linkSubmit"></button>
@@ -25,5 +30,19 @@ fm.submit(function (e) {
     });
     e.preventDefault();
 });
+
+// var delform = $(".deleteLink");
+// delform.submit(function (e) {
+//     $.ajax({
+//         type: delform.attr('method'),
+//         url: delform.attr('action'),
+//         data: delform.serialize(),
+//         success: function (data) {
+//             console.log('ok');
+//             $("#link-list").load("/units/<%=unit._id%>");
+//         }
+//     });
+//     e.preventDefault();
+// });
 
 </script>

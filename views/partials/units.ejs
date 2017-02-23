@@ -4,6 +4,9 @@
       <a href="/units/<%=unit._id%>">
       <img src="<%= unit.url %>">
       <h4><%=unit.name%></h4></a>
+      <form class="formdel" method="POST" action="/units/<%=unit._id%>?_method=DELETE">
+      <button class="ui icon button medium"><i class="trash icon"></i></button>
+      </form>
     </div>
   </div>
 

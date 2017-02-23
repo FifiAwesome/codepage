@@ -64,6 +64,16 @@ app.get("/units", function(req, res){
     };
   })
 })
+//delete unit
+app.delete("/units/:id", function(req, res){
+  Unit.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      res.redirect("/");
+    } else {
+      res.redirect("/");
+    }
+  })
+})
 
 //show specific unit
 
@@ -78,7 +88,7 @@ app.get("/units/:id", function(req, res){
 });
 
 //links add
-app.post("/units/:id/new", function(req, res){
+app.post("/units/:id/links/new", function(req, res){
   Unit.findById(req.params.id, function(err, found){
     if(err){
       console.log(err);
@@ -96,6 +106,19 @@ app.post("/units/:id/new", function(req, res){
     }
   })
 });
+
+//link delete
+app.delete("/units/:id/links/:link_id", function(req, res){
+  Link.findByIdAndRemove(req.params.link_id, function(err){
+    if(err){
+      res.redirect("/");
+      console.log(err);
+    } else {
+      res.redirect("/");
+    };
+  });
+});
+
 
 app.listen(process.env.PORT, function(){
   console.log("CodePage server started.")
